@@ -24,25 +24,26 @@ class ImageForm extends Component
         }
     }
 
-    #[Rule('image|max:4096')] // 4MB Max
+    //mimes:jpeg,png,jpg
+    #[Rule('image|max:4096|mimes:jpeg,png,jpg')] // 4MB Max
     public $photo;
 
     public function save()
     {
+        $this->validate();
+
+        $path = $this->photo->store('/', 'public');
+
         $user = User::findOrFail(auth()->user()->id);
 
         $imageName = Str::random(30) . 'key' . $user->id . '.png';
-
-        $path = $this->photo->store('/', 'public');
 
         $user->profileImage = $path;
 
         $user->save();
 
-        Storage::disk('public')->put($imageName, $path);
+        // Storage::disk('public')->put($imageName, $path);
     }
-
-
 
     public function render()
     {
