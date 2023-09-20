@@ -1,7 +1,9 @@
 <div>
     <div class="flex flex-col justify-center items-center">
         @if ($image != null)
-            <img src="{{ Storage::disk('public')->url($image) }}">
+            <img src="{{ Storage::disk('public')->url($image) }}"
+                class="  w-[150px] h-[150px]  md:w-[220px] md:h-[220px] shadow-md shadow-gray-600 dark:shadow-rose-800 rounded-full border border-night dark:border-sred bg-slate-100"
+                alt="">
         @else
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-16 h-16 stroke-2 stroke-red-600">

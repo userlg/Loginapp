@@ -36,11 +36,13 @@ class ImageForm extends Component
 
         $user = User::findOrFail(auth()->user()->id);
 
-        $imageName = Str::random(30) . 'key' . $user->id . '.png';
+        //$imageName = Str::random(30) . 'key' . $user->id . '.png';
 
         $user->profileImage = $path;
 
         $user->save();
+
+        $this->image = $user->profileImage;
 
         // Storage::disk('public')->put($imageName, $path);
     }
