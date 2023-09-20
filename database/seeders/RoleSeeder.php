@@ -13,9 +13,9 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
-        $limit = 2;
+        $limit = 1;
 
-        $roles = ['user', 'guest', 'admin'];
+        $roles = ['user', 'admin'];
 
         while ($limit >= 0) {
 

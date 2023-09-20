@@ -59,7 +59,7 @@ return [
 
     'features' => [
         // Features::termsAndPrivacyPolicy(),
-        Features::profilePhotos(),
+        //Features::profilePhotos(),
         //Features::api(),
         // Features::teams(),
         // Features::teams(['invitations' => true]),

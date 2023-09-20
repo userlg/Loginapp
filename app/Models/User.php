@@ -28,7 +28,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role_id'
+        'role_id',
+        'profileImage'
     ];
 
     /**
@@ -70,5 +71,18 @@ class User extends Authenticatable
                 return $role->role;
             }
         }
+    }
+
+    public function getImageProfile(): string
+    {
+        return $this->profileImage;
+    }
+
+    public function hasImageProfile(): bool
+    {
+        if ($this->profileImage != null) {
+            return true;
+        }
+        return false;
     }
 }

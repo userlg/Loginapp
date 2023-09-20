@@ -27,9 +27,9 @@ class CreateRoles extends Command
      */
     public function handle()
     {
-        $roles = ['user', 'guest', 'admin'];
+        $roles = ['user', 'admin'];
 
-        $limit = 2;
+        $limit = 1;
 
         if (count(Role::all()) == 0) {
 

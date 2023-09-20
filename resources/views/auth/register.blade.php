@@ -25,8 +25,7 @@
                 <x-label for="role_id" value="{{ __('Role') }}" />
                 <select name="role_id" id="role_id" required>
                     <option value="1">Admin</option>
-                    <option value="2">Guest</option>
-                    <option value="3">User</option>
+                    <option value="2">User</option>
                 </select>
             </div>
 
